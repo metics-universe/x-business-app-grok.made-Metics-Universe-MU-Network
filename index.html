@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>X Business Page Creator - Powered by Grok AI</title>
+    <meta name="description" content="Preview and export a static X business profile page.">
+    <meta name="theme-color" content="#000000">
+    <title>X Business Profile Builder</title>
     <link rel="stylesheet" href="style.css">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -26,7 +28,8 @@
 
             <div class="form-group">
                 <label for="bizHandle">X Handle</label>
-                <input type="text" id="bizHandle" placeholder="e.g. @apex_ai" value="@apex_ai">
+                <input type="text" id="bizHandle" placeholder="e.g. @apex_ai" value="@apex_ai" maxlength="16" autocomplete="off" aria-describedby="handleHelp">
+                <small id="handleHelp" class="field-help">1-15 letters, numbers, or underscores.</small>
             </div>
 
             <div class="form-group">
@@ -46,17 +49,18 @@
 
             <div class="form-group">
                 <label for="bizWebsite">Website Link</label>
-                <input type="text" id="bizWebsite" placeholder="https://yourwebsite.com" value="https://grok.com">
+                <input type="text" id="bizWebsite" inputmode="url" autocomplete="url" placeholder="https://yourwebsite.com" value="https://grok.com">
             </div>
 
-            <button class="btn-primary" id="exportBtn"><i class="fa-solid fa-code"></i> Export Code</button>
+            <button class="btn-primary" id="exportBtn" type="button"><i class="fa-solid fa-download" aria-hidden="true"></i> Export Profile</button>
+            <p class="form-status" id="exportStatus" role="status" aria-live="polite"></p>
         </aside>
 
         <!-- Main Preview Screen (Simulating an X Business Profile) -->
         <main class="preview-area">
             <header class="preview-topbar">
-                <span>Live Preview View</span>
-                <span class="badge"><i class="fa-solid fa-circle-check"></i> Ready for GitHub Pages</span>
+                <span>Profile preview</span>
+                <span class="badge">Example data</span>
             </header>
 
             <div class="profile-card">
@@ -65,7 +69,7 @@
                     <div class="avatar-placeholder">
                         <i class="fa-solid fa-store"></i>
                     </div>
-                    <button class="btn-follow">Follow on X</button>
+                    <a class="btn-follow" id="followLink" href="https://x.com/apex_ai" target="_blank" rel="noopener noreferrer">Follow on X</a>
                 </div>
 
                 <div class="profile-info">
@@ -74,9 +78,8 @@
                     <p id="previewBio" class="bio">Building the future of decentralized AI tools and high-performance workflows on X.</p>
                     
                     <div class="meta-details">
-                        <span><i class="fa-solid fa-tag"></i> <span id="previewCategory">Technology & AI</span></span>
-                        <span><i class="fa-solid fa-link"></i> <a href="https://grok.com" id="previewWebsite" target="_blank">grok.com</a></span>
-                        <span><i class="fa-solid fa-calendar-days"></i> Joined October 2026</span>
+                        <span><i class="fa-solid fa-tag" aria-hidden="true"></i> <span id="previewCategory">Technology & AI</span></span>
+                        <span id="websiteMeta"><i class="fa-solid fa-link" aria-hidden="true"></i> <a href="https://grok.com" id="previewWebsite" target="_blank" rel="noopener noreferrer">grok.com</a></span>
                     </div>
 
                     <div class="stats-row">
@@ -87,6 +90,7 @@
 
                 <!-- Sample Pinned Post -->
                 <div class="pinned-post">
+                    <p class="example-label">Example post</p>
                     <div class="post-header">
                         <div class="mini-avatar"></div>
                         <div class="post-user-info">

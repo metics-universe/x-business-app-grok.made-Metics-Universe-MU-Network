@@ -1,0 +1,32 @@
+{
+  "name": "@metics-universe/x-business-app",
+  "version": "1.0.0",
+  "description": "A static X business profile preview and export tool for Metics Universe.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metics-universe/xbusines.metics.universe.crypto.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "index.html",
+    "style.css",
+    "script.js",
+    "README.md",
+    "RELEASE.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --check script.js && node --test",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "metics-universe",
+    "x-business-app",
+    "crypto",
+    "x-profile-builder"
+  ],
+  "author": "Metics Universe",
+  "license": "MIT"
+}
