@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://metics-universe.github.io/xbusines.metics.universe.crypto/sitemap.xml

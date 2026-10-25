@@ -1,6 +1,6 @@
 {
   "name": "@metics-universe/x-business-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A static X business profile preview and export tool for Metics Universe.",
   "repository": {
     "type": "git",
@@ -13,8 +13,11 @@
     "index.html",
     "style.css",
     "script.js",
+    "robots.txt",
+    "sitemap.xml",
     "README.md",
     "RELEASE.md",
+    "DISCOVERABILITY.md",
     "LICENSE"
   ],
   "scripts": {

@@ -30,6 +30,8 @@ The `Publish package` workflow publishes `@metics-universe/x-business-app` to Gi
 
 For the complete step-by-step release and deployment checklist, see [RELEASE.md](RELEASE.md).
 
+For search-engine submission, package visibility, and practical sharing guidance, see [DISCOVERABILITY.md](DISCOVERABILITY.md).
+
 ## License
 
 MIT. See [LICENSE](LICENSE).

@@ -19,6 +19,18 @@ test('profile builder exposes its required controls and live preview', () => {
     }
 });
 
+test('search metadata and crawler files use the live Pages URL', () => {
+    const robots = readFileSync(join(root, 'robots.txt'), 'utf8');
+    const sitemap = readFileSync(join(root, 'sitemap.xml'), 'utf8');
+    const liveUrl = 'https://metics-universe.github.io/xbusines.metics.universe.crypto/';
+
+    assert.match(html, new RegExp(`<link rel="canonical" href="${liveUrl.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&')}">`));
+    assert.match(html, /"@type": "WebApplication"/);
+    assert.match(robots, /User-agent: \*/);
+    assert.match(robots, /Sitemap: https:\/\/metics-universe\.github\.io\/xbusines\.metics\.universe\.crypto\/sitemap\.xml/);
+    assert.match(sitemap, /https:\/\/metics-universe\.github\.io\/xbusines\.metics\.universe\.crypto\//);
+});
+
 test('package metadata targets GitHub Packages and includes release files', () => {
     const manifest = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'));
     assert.equal(manifest.name, '@metics-universe/x-business-app');
