@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X Business Page Creator - Powered by Grok AI</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar / Builder Panel -->
+        <aside class="control-panel">
+            <div class="brand">
+                <i class="fa-solid fa-bolt"></i>
+                <h2>X Business Builder</h2>
+            </div>
+            <p class="subtitle">Customize your X business page live.</p>
+
+            <div class="form-group">
+                <label for="bizName">Business Name</label>
+                <input type="text" id="bizName" placeholder="e.g. Apex Innovations" value="Apex Innovations">
+            </div>
+
+            <div class="form-group">
+                <label for="bizHandle">X Handle</label>
+                <input type="text" id="bizHandle" placeholder="e.g. @apex_ai" value="@apex_ai">
+            </div>
+
+            <div class="form-group">
+                <label for="bizBio">Bio / Description</label>
+                <textarea id="bizBio" placeholder="What does your business do?">Building the future of decentralized AI tools and high-performance workflows on X.</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="bizCategory">Category</label>
+                <select id="bizCategory">
+                    <option value="Technology & AI">Technology & AI</option>
+                    <option value="E-Commerce">E-Commerce</option>
+                    <option value="Creator & Media">Creator & Media</option>
+                    <option value="Finance & Crypto">Finance & Crypto</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="bizWebsite">Website Link</label>
+                <input type="text" id="bizWebsite" placeholder="https://yourwebsite.com" value="https://grok.com">
+            </div>
+
+            <button class="btn-primary" id="exportBtn"><i class="fa-solid fa-code"></i> Export Code</button>
+        </aside>
+
+        <!-- Main Preview Screen (Simulating an X Business Profile) -->
+        <main class="preview-area">
+            <header class="preview-topbar">
+                <span>Live Preview View</span>
+                <span class="badge"><i class="fa-solid fa-circle-check"></i> Ready for GitHub Pages</span>
+            </header>
+
+            <div class="profile-card">
+                <div class="banner-placeholder"></div>
+                <div class="profile-header-row">
+                    <div class="avatar-placeholder">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <button class="btn-follow">Follow on X</button>
+                </div>
+
+                <div class="profile-info">
+                    <h1 id="previewName">Apex Innovations</h1>
+                    <p id="previewHandle" class="handle">@apex_ai</p>
+                    <p id="previewBio" class="bio">Building the future of decentralized AI tools and high-performance workflows on X.</p>
+                    
+                    <div class="meta-details">
+                        <span><i class="fa-solid fa-tag"></i> <span id="previewCategory">Technology & AI</span></span>
+                        <span><i class="fa-solid fa-link"></i> <a href="https://grok.com" id="previewWebsite" target="_blank">grok.com</a></span>
+                        <span><i class="fa-solid fa-calendar-days"></i> Joined October 2026</span>
+                    </div>
+
+                    <div class="stats-row">
+                        <span><strong>1,482</strong> Following</span>
+                        <span><strong>25.6K</strong> Followers</span>
+                    </div>
+                </div>
+
+                <!-- Sample Pinned Post -->
+                <div class="pinned-post">
+                    <div class="post-header">
+                        <div class="mini-avatar"></div>
+                        <div class="post-user-info">
+                            <span class="p-name" id="postName">Apex Innovations</span>
+                            <span class="p-handle" id="postHandle">@apex_ai</span>
+                        </div>
+                        <i class="fa-brands fa-x-twitter x-icon"></i>
+                    </div>
+                    <p class="post-text">We are live! Discover how our new automated business suite transforms your workflow directly on the timeline. Check out the link in our bio to get started. 🚀</p>
+                    <div class="post-actions">
+                        <span><i class="fa-regular fa-comment"></i> 48</span>
+                        <span><i class="fa-solid fa-retweet"></i> 132</span>
+                        <span><i class="fa-regular fa-heart"></i> 640</span>
+                        <span><i class="fa-solid fa-chart-simple"></i> 14.2K</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
